@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SnakeLadder Game</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      section {
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        width: 70vw;
+        padding-top: 5vh;
+        justify-content: space-between;
+      }
+      .board {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 500px;
+        height: 500px;
+        background-color: rgb(162, 30, 30);
+        border: 2px solid rgb(162, 30, 30);
+        color: white;
+      }
+      .cell {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .white {
+        background-color: white;
+      }
+      .navigation {
+        width: 20%;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+      .show {
+        text-align: center;
+        font-size: 32px;
+        font-weight: bold;
+        width: 200px;
+      }
+      .player {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        transition: all 1.5s ease;  
+      }
+      .one {
+        background-color: blue;
+        top: 490px;
+        left: 208px;
+      }
+      .two {
+        background-color: violet;
+        top: 510px;
+        left: 208px;
+      }
+      .snake{
+        background-color: rgb(0, 90, 6);
+        width : 5px;
+        position: absolute;
+      }
+      .ladder{
+        background-color: rgb(210, 126, 16);
+        width : 5px;
+        height: 100px;
+        position: absolute;
+      }
+    </style> 
+  </head>
+  <body>
+    <section id="section">
+      <div class="board" id="board">
+        <div class="player one" id="one"></div>
+        <div class="player two" id="two"></div>
+        <div class="snake" style="
+          height: 170px;
+          left: 638px;
+          top: 350px;
+          rotate: -20deg;
+        "></div>
+        <div class="snake" style="
+          height: 170px;
+          left: 488px;
+          top: 350px;
+          rotate: 20deg
+        "></div>
+        <div class="snake" style="
+          height: 150px;
+          left: 518px;
+          top: 280px;
+          rotate: 45deg
+        "></div>
+        <div class="snake" style="
+          height: 270px;
+          left: 295px;
+          top: 200px;
+          rotate: -12deg;
+        "></div>
+        <div class="snake" style="
+          height: 220px;
+          left: 438px;
+          top: 50px;
+          rotate: 15deg;
+        "></div>
+        <div class="snake" style="
+          height: 120px;
+          left: 338px;
+          top: 50px;
+          rotate: 25deg;
+        "></div>
+        <div class="ladder" style="
+          height: 170px;
+          left: 438px;
+          top: 400px;
+          rotate: 70deg;
+        "></div>
+        <div class="ladder" style="
+          height: 150px;
+          left: 618px;
+          top: 380px;
+          rotate: 40deg;
+        "></div>
+        <div class="ladder" style="
+          height: 120px;
+          left: 238px;
+          top: 300px;
+          rotate: 25deg;
+        "></div>
+        <div class="ladder" style="
+          height: 300px;
+          left: 498px;
+          top: 135px;
+          rotate: -30deg;
+        "></div>
+        <div class="ladder" style="
+          height: 190px;
+          left: 598px;
+          top: 165px;
+          rotate: -58deg;
+        "></div>
+        <div class="ladder" style="
+          height: 110px;
+          left: 638px;
+          top: 50px;
+          rotate: -25deg; 
+        "></div>
+        <div class="ladder" style="
+          height: 110px;
+          left: 238px;
+          top: 50px;
+          rotate: 25deg; 
+        "></div>
+      </div>
+      <div class="navigation" id="nav">
+        <div>Player Turn</div>
+        <div id="turnBased" class="show">X</div>
+        <button type="button" onclick="rollDice()">Roll Dice</button>
+        <div>Total Move</div>
+        <div id="result" class="show">0</div>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body> 
+</html>
